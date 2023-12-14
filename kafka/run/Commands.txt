@@ -1,0 +1,4 @@
+
+kafka-topics.bat --create --bootstrap-server 127.0.0.1:9092 --topic ilk-topic --partitions 5 --replication-factor 3
+
+kafka-topics.bat --describe --bootstrap-server 127.0.0.1:9092 --topic ilk-topic

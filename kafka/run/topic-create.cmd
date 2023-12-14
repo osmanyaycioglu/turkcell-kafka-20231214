@@ -1,0 +1,1 @@
+kafka-topics.bat --create --bootstrap-server 127.0.0.1:9092 --topic ilk-topic --partitions 5 --replication-factor 3 --config segment.bytes=1000000
