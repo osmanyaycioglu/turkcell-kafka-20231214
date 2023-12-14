@@ -1,0 +1,15 @@
+C:\kafka folder ına kafka yı aç
+
+KAFKA_HOME=C:\kafka -> env set et
+
+PATH -> env  C:\kafka\bin\windows ekle
+
+server-0.properties i C:\kafka\config e kopyala
+server-1.properties i C:\kafka\config e kopyala
+server-2.properties i C:\kafka\config e kopyala
+
+zookeeper-start.cmd yi çalıştır
+
+0-kafka-server-start.cmd yi çalıştır
+1-kafka-server-start.cmd yi çalıştır
+2-kafka-server-start.cmd yi çalıştır
