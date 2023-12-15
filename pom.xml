@@ -9,6 +9,9 @@
 
   <name>turkcell-kafka-20231214</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>kafka-java</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
