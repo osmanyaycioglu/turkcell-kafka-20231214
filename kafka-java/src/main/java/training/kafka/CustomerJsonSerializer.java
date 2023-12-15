@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;
 
-public class JsonSerializer implements Serializer<Customer> {
+public class CustomerJsonSerializer implements Serializer<Customer> {
     private ObjectMapper objectMapper = new ObjectMapper();
 
 

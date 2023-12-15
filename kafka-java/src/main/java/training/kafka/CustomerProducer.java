@@ -1,9 +1,7 @@
 package training.kafka;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.IntegerSerializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +14,7 @@ public class CustomerProducer {
         properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
                        IntegerSerializer.class.getName());
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-                       JsonSerializer.class.getName());
+                       CustomerJsonSerializer.class.getName());
         properties.put(ProducerConfig.ACKS_CONFIG,
                        "1");
         properties.put(ProducerConfig.RETRIES_CONFIG,
@@ -25,7 +23,7 @@ public class CustomerProducer {
                        "300");
 
         final Producer<Integer, Customer> producer = new KafkaProducer<>(properties);
-        for (int i = 0; i < 10_000; i++) {
+        for (int i = 0; i < 100; i++) {
             Customer customerLoc = new Customer();
             customerLoc.setFirstName("osman"+i);
             customerLoc.setLastName("yay"+i);
@@ -33,7 +31,7 @@ public class CustomerProducer {
             customerLoc.setHeight(200);
             customerLoc.setWeight(100);
 
-            producer.send(new ProducerRecord<>("ilk-topic",
+            producer.send(new ProducerRecord<>("turkcell-new-topic",
                                                i,
                                                customerLoc),
                           new Callback() {
